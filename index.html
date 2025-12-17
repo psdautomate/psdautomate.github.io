@@ -20,20 +20,17 @@
       background: #f6f7f9;
     }
 
-    /* Navbar */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    /* Logo */
     .logo {
       font-weight: 700;
       letter-spacing: 0.5px;
     }
 
-    /* Hero */
     .hero {
       background: linear-gradient(135deg, #0d6efd, #084298);
       color: white;
@@ -41,38 +38,13 @@
       padding: 40px 20px;
     }
 
-    .hero h1 {
-      font-size: 1.6rem;
-    }
+    .hero h1 { font-size: 1.6rem; }
+    .hero p { font-size: 0.95rem; }
 
-    .hero p {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-
-    /* Service cards */
-    .service-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 18px;
-      text-align: center;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-      font-weight: 500;
-    }
-
-    /* Gallery */
-    .gallery-box {
-      background: #e9ecef;
-      border-radius: 12px;
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .accordion-button {
       font-weight: 600;
-      color: #6c757d;
     }
 
-    /* WhatsApp floating */
     .whatsapp-float {
       position: fixed;
       bottom: 18px;
@@ -92,14 +64,9 @@
       color: white;
     }
 
-    /* Desktop */
     @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .hero p {
-        font-size: 1.1rem;
-      }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -109,10 +76,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-dark bg-dark">
   <div class="container d-flex justify-content-between align-items-center">
-    <span class="navbar-brand logo">
-      PSD Smart Home Automation
-    </span>
-
+    <span class="navbar-brand logo">PSD Smart Home Automation and Solutions</span>
     <a href="tel:+919729311123" class="text-white text-decoration-none fw-bold">
       📞 9729311123
     </a>
@@ -124,69 +88,88 @@
   <!-- HERO -->
   <div class="hero text-center mb-5">
     <h1 class="fw-bold">PSD Smart Home Automation & Solutions</h1>
-
     <p>
       Smart lighting, smart switches, CCTV systems, smart door locks
       and OpenHAB-based custom home automation.
     </p>
-
-    <p class="fw-semibold">
-      Serving Hisar & nearby areas
-    </p>
+    <p class="fw-semibold">Serving Hisar & nearby areas</p>
 
     <a href="https://wa.me/919729311123" class="btn btn-light btn-lg mt-3 fw-semibold">
       📲 WhatsApp Us
     </a>
   </div>
 
-  <!-- SERVICES -->
+  <!-- SERVICES (EXPANDABLE) -->
   <h2 class="text-center fw-bold mb-4">Our Services</h2>
 
-  <div class="row g-3 mb-5">
-    <div class="col-12 col-md-4"><div class="service-card">💡 Smart Lighting Automation</div></div>
-    <div class="col-12 col-md-4"><div class="service-card">🎛 Smart Switch Installation</div></div>
-    <div class="col-12 col-md-4"><div class="service-card">📷 CCTV & Surveillance</div></div>
-    <div class="col-12 col-md-4"><div class="service-card">🔐 Smart Door Locks</div></div>
-    <div class="col-12 col-md-4"><div class="service-card">⚙️ OpenHAB & MQTT Automation</div></div>
-  </div>
+  <div class="accordion mb-5" id="servicesAccordion">
 
-  <!-- GALLERY -->
-  <h2 class="text-center fw-bold mb-4">Our Work</h2>
-
-  <div class="row g-3 mb-5">
-    <div class="col-6 col-md-3"><div class="gallery-box">Project 1</div></div>
-    <div class="col-6 col-md-3"><div class="gallery-box">Project 2</div></div>
-    <div class="col-6 col-md-3"><div class="gallery-box">Project 3</div></div>
-    <div class="col-6 col-md-3"><div class="gallery-box">Project 4</div></div>
-  </div>
-
-  <!-- CONTACT -->
-  <h2 class="text-center fw-bold mb-4">Contact Us</h2>
-
-  <p class="text-center mb-4">
-    📞 Phone / WhatsApp: +91 97293 11123 <br>
-    📧 Email: wadhwa.sachin2079@gmail.com <br>
-    📍 1326, Ground Floor, Sector 16-17, Hisar, Haryana – 125001
-  </p>
-
-  <!-- CONTACT FORM -->
-  <div class="row justify-content-center mb-5">
-    <div class="col-md-6">
-      <form action="mailto:wadhwa.sachin2079@gmail.com" method="post" enctype="text/plain">
-        <input type="text" class="form-control mb-3" name="Name" placeholder="Your Name" required>
-        <input type="tel" class="form-control mb-3" name="Phone" placeholder="Phone Number" required>
-        <textarea class="form-control mb-3" name="Message" placeholder="Your Requirement" rows="4" required></textarea>
-        <button type="submit" class="btn btn-primary w-100">Send Enquiry</button>
-      </form>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#service1">
+          💡 Smart Lighting Automation
+        </button>
+      </h2>
+      <div id="service1" class="accordion-collapse collapse show" data-bs-parent="#servicesAccordion">
+        <div class="accordion-body">
+          Automated lighting solutions including schedules, motion sensors,
+          scene control, remote access, and energy-efficient smart lighting.
+        </div>
+      </div>
     </div>
-  </div>
 
-</div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service2">
+          🎛 Smart Switch Installation
+        </button>
+      </h2>
+      <div id="service2" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+        <div class="accordion-body">
+          Installation of smart switches with mobile app control,
+          voice assistants, and manual override support.
+        </div>
+      </div>
+    </div>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/919729311123" class="whatsapp-float">
-  💬 WhatsApp
-</a>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service3">
+          📷 CCTV & Surveillance
+        </button>
+      </h2>
+      <div id="service3" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+        <div class="accordion-body">
+          CCTV camera installation with live monitoring,
+          remote viewing, recording, and secure access.
+        </div>
+      </div>
+    </div>
 
-</body>
-</html>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service4">
+          🔐 Smart Door Locks
+        </button>
+      </h2>
+      <div id="service4" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+        <div class="accordion-body">
+          Smart locks with fingerprint, PIN, RFID, mobile app,
+          and remote access features.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#service5">
+          ⚙️ OpenHAB & MQTT Automation
+        </button>
+      </h2>
+      <div id="service5" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+        <div class="accordion-body">
+          Custom automation using OpenHAB and MQTT with
+          local server control, privacy-focused and cloud-independent.
+        </div>
+      </div>
+    </div>
